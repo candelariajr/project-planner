@@ -4,18 +4,22 @@
     <div v-if="projects.length">
       <!-- For each project in the projects array - primary key is the id-->
       <div v-for="project in projects" :key="project.id">
-        <p>{{project.title}}</p>
+        <!-- Use the SingleProject component instead of raw HTML -->
+        <!-- Pass in an argument :project is the object you're passing in
+          "project" is the item in the v-for this makes the project object
+          visible to the SingleProject component-->
+        <SingleProject :project = "project"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-
-
+//import components this view is dependant on
+import SingleProject from "@/components/SingleProject";
 export default {
   name: 'Home',
-  components: {},
+  components: {SingleProject},
   data(){
     return{
       projects: []
@@ -37,3 +41,10 @@ export default {
   }
 }
 </script>
+<style>
+/*Global styles*/
+*{
+  /* I hate it when webapps allow you to highlight things */
+  user-select: none;
+}
+</style>
