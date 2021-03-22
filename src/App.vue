@@ -3,6 +3,7 @@
 </template>
 
 <style>
+/*Added basic CSS to general app*/
 body{
   background-color: #f2f2f2;
 }
@@ -15,6 +16,4 @@ body{
   margin: 0 auto;
   color: #555;
 }
-
-
 </style>
