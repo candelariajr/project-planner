@@ -8,12 +8,12 @@
         <!-- Pass in an argument :project is the object you're passing in
           "project" is the item in the v-for this makes the project object
           visible to the SingleProject component-->
-        <SingleProject :project = "project"/>
+        <!-- @deletethis linking the $emit custom function from the SingleProject instance to here-->
+        <SingleProject :project = "project" @deletethis="handleDelete"/>
       </div>
     </div>
   </div>
 </template>
-
 <script>
 //import components this view is dependant on
 import SingleProject from "@/components/SingleProject";
@@ -38,6 +38,15 @@ export default {
     .then(data => this.projects = data)
         //if any error is encountered in this process
     .catch(err => console.log(err))
+  },
+  methods:{
+    handleDelete(id){
+      //filter out all projects that have the id corresponding to the id given in the argument
+      this.projects = this.projects.filter((project) => {
+        // filters out all objects that return false (see filter syntax)
+        return project.id !== id;
+      })
+    }
   }
 }
 </script>
