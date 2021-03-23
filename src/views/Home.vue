@@ -57,9 +57,5 @@ export default {
 }
 </script>
 <style>
-/*Global styles*/
-*{
-  /* webapps shouldn't allow you to highlight things */
-  user-select: none;
-}
+
 </style>

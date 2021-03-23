@@ -4,6 +4,8 @@ import AddProject from "@/views/AddProject";
 
 const routes = [
   {
+    //on loading the app this is where the first place directs to.
+    //Note: It loads App.vue THEN Home.
     path: '/',
     name: 'Home',
     component: Home
