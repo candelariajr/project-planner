@@ -12,7 +12,13 @@
         Instead of keying off one symbol per character like regular fonts,
         it keys off of groups of characters for a symbol.
         -->
-        <span class="material-icons">edit</span>
+        <router-link :to="{name: 'EditProject', params:{ id: project.id}}">
+          <!--
+          Note: name comes from the NAME specified in the routes, not the name of the component
+          The ability to get project info is passed by Home.Vue in the use of this component
+          -->
+          <span class="material-icons">edit</span>
+        </router-link>
         <span @click="deleteProject" class="material-icons">delete</span>
         <span @click="toggleComplete" class="material-icons check">done</span>
       </div>
@@ -39,6 +45,7 @@ export default {
     }
   },
   methods:{
+    //Note: Edit doesn't have a method here as Edit is handled by a route to a form in another view
     deleteProject(){
       //this works with the json-server
       fetch(this.uri, {

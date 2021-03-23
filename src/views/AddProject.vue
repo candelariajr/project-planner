@@ -40,7 +40,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<!-- de-scoped to allow edit page to use this form CSS-->
+<style>
 form{
   background: white;
   padding: 20px;
