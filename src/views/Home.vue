@@ -9,7 +9,7 @@
           "project" is the item in the v-for this makes the project object
           visible to the SingleProject component-->
         <!-- @deletethis linking the $emit custom function from the SingleProject instance to here-->
-        <SingleProject :project = "project" @deletethis="handleDelete"/>
+        <SingleProject :project = "project" @deletethis="handleDelete" @completethis="handleComplete"/>
       </div>
     </div>
   </div>
@@ -45,7 +45,13 @@ export default {
       this.projects = this.projects.filter((project) => {
         // filters out all objects that return false (see filter syntax)
         return project.id !== id;
-      })
+      });
+    },
+    handleComplete(id){
+      let p = this.projects.find(project => {
+        return project.id === id;
+      });
+      p.complete = !p.complete;
     }
   }
 }
@@ -53,7 +59,7 @@ export default {
 <style>
 /*Global styles*/
 *{
-  /* I hate it when webapps allow you to highlight things */
+  /* webapps shouldn't allow you to highlight things */
   user-select: none;
 }
 </style>

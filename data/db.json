@@ -1,5 +1,5 @@
 {
-  "projects" : [
+  "projects": [
     {
       "id": 1,
       "title": "Create new homepage banner",
@@ -11,6 +11,12 @@
       "title": "Make Marketing email",
       "details": "Lorem Ipsum",
       "complete": true
+    },
+    {
+      "title": "dfgfdg",
+      "details": "dfgdfg",
+      "complete": false,
+      "id": 5
     }
   ]
 }
